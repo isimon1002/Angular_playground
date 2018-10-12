@@ -8,13 +8,16 @@ import { NamesService } from './names.service';
 })
 export class AppComponent {
   constructor(private namesService: NamesService) { }
-  submited = false;
-  name: string
+  item: string;
+  todoList = [];
 
   onSubmit(){
-    if(this.submited){
-      this.namesService.addNames(this.name)
-    }
-    this.submited = !this.submited;
+    this.todoList.push(this.item)
+    console.log(this.todoList)
   }
+
+  onDelete(index){
+    this.todoList.splice(index, 1)
+  }
+
 }

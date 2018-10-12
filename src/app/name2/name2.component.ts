@@ -13,7 +13,6 @@ export class Name2Component implements OnInit {
   constructor(private namesService: NamesService) { }
 
   ngOnInit() {
-    console.log(this.names)
   }
 
 }

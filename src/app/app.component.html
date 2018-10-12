@@ -1,10 +1,11 @@
-<div *ngIf="!submited">
-  <h1>Please enter your name</h1>
-  <input type="text" class="form-control" [(ngModel)]="name">
-  <app-name2 [name2]="name"></app-name2>
-  <button (click)="onSubmit()">Submit Name</button>
+<div>
+  <h1>To Do List</h1>
+  <label>Insert activitiy</label>
+  <input type="text" class="form-control" [(ngModel)]="item">
+  <button (click)="onSubmit()">Submit Item</button>
 </div>
-<div *ngIf="submited">
-  <h1>Your name is {{ name }}</h1>
-  <button (click)="onSubmit()"> Change Name</button>
+<div >
+    <ol>
+      <li (click)="onDelete(i)" *ngFor="let list of todoList; let i = index">{{list}}</li>
+    </ol>
 </div>
