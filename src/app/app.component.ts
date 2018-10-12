@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { NamesService } from './names.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'toy-app';
+  constructor(private namesService: NamesService) { }
+  submited = false;
+  name: string
+
+  onSubmit(){
+    if(this.submited){
+      this.namesService.addNames(this.name)
+    }
+    this.submited = !this.submited;
+  }
 }
