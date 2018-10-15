@@ -6,6 +6,6 @@
 </div>
 <div >
     <ol>
-      <li (click)="onDelete(i)" *ngFor="let list of todoList; let i = index">{{list}}</li>
+      <li [ngClass]="{cross: todoList[i].done}" *ngFor="let list of todoList; let i = index" (click)="comp(i)">{{list.item}} <button (click)="onDelete(i)">Delete</button></li>
     </ol>
 </div>
